@@ -4,11 +4,11 @@
   "description": "Base application setup for creating a new react project.",
   "main": "server/index.js",
   "scripts": {
-    "start": "npm run build && node server/index.js",
-    "cre-start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "npm run less && webpack --mode development",
+    "start": "node server/index.js",
+    "less": "lessc src/css/style.less dist/css/style.css",
+    "lint": "eslint .",
+    "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
   },
   "dependencies": {
     "axios": "^0.16.1",
